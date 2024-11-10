@@ -76,15 +76,19 @@ function openModal(projectId) {
     const project = projectDetails.find(p => p.id === projectId); // Find project by ID
 
     if (project) {
-        document.getElementById('modalImage').src = project.image;
-        document.getElementById('modalTitle').textContent = project.title;
+        // Populate banner content
+        document.getElementById('modalBannerImage').src = project.image;
+        document.getElementById('modalBannerTitle').textContent = project.title;
+        document.getElementById('modalBannerTitle').href = project.link;
+        document.getElementById('modalStartDate').textContent = project.creationDate;
+        document.getElementById('modalEndDate').textContent = project.endDate;
+
+        // Populate skills and description
         document.getElementById('modalDescription').textContent = project.description;
 
-        // Clear previous tags
+        // Clear and add new tags
         const modalTags = document.getElementById('modalTags');
         modalTags.innerHTML = '';
-
-        // Add new tags
         project.tags.forEach(tag => {
             const span = document.createElement('span');
             span.classList.add('tag');
@@ -92,6 +96,7 @@ function openModal(projectId) {
             modalTags.appendChild(span);
         });
 
+        // Show the modal
         modal.style.display = 'flex';
     }
 }
