@@ -72,32 +72,48 @@ function updateCarouselButtons() {
 
 // Function to open the modal and display project details
 function openModal(projectId) {
-    const modal = document.getElementById('modal');
-    const project = projectDetails.find(p => p.id === projectId); // Find project by ID
+    const project = projectData.find(p => p.id === projectId);
 
     if (project) {
-        // Populate banner content
+        // Populate Banner Info
         document.getElementById('modalBannerImage').src = project.image;
         document.getElementById('modalBannerTitle').textContent = project.title;
-        document.getElementById('modalBannerTitle').href = project.link;
         document.getElementById('modalStartDate').textContent = project.creationDate;
         document.getElementById('modalEndDate').textContent = project.endDate;
+        document.getElementById('modalProjectType').textContent = project.type;
 
-        // Populate skills and description
-        document.getElementById('modalDescription').textContent = project.description;
+        // Populate New Sections
+        document.getElementById('modalAuthors').textContent = project.authors || "Author not available";
+        document.getElementById('modalAbstract').textContent = project.abstract || "Abstract not available";
 
-        // Clear and add new tags
-        const modalTags = document.getElementById('modalTags');
-        modalTags.innerHTML = '';
-        project.tags.forEach(tag => {
-            const span = document.createElement('span');
-            span.classList.add('tag');
-            span.textContent = tag;
-            modalTags.appendChild(span);
-        });
+        // Optional Media Section
+        const mediaSection = document.getElementById('modalMediaSection');
+        const mediaElement = document.getElementById('modalMedia');
+        if (project.media) {
+            mediaElement.src = project.media;
+            mediaSection.style.display = 'block';
+        } else {
+            mediaSection.style.display = 'none';
+        }
 
-        // Show the modal
-        modal.style.display = 'flex';
+        // Project Details
+        document.getElementById('modalDescription').textContent = project.description || "Description not available";
+
+        // Skills
+        const skillsList = document.getElementById('modalSkillsList');
+        skillsList.innerHTML = ''; // Clear previous skills
+        if (project.skills && project.skills.length > 0) {
+            project.skills.forEach(skill => {
+                const skillItem = document.createElement('li');
+                skillItem.textContent = skill;
+                skillsList.appendChild(skillItem);
+            });
+        } else {
+            skillsList.innerHTML = '<li>No skills listed</li>';
+        }
+
+        // Display the modal
+        document.getElementById('modal').style.display = 'flex';
     }
 }
 
