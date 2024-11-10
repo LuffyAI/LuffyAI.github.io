@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="exp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">    
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="hero-section.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/navbar.js" defer></script>
+    <script src="js/typeoutname.js" defer></script>
+    
+
+    <title>Larnell Moore</title>
+
+    <style>
+       /* Adjust iframe container for CV to show only one page at a time */
+       .cv-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+  
+      .iframe-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; /* Control the width */
+        padding-bottom: 50%; /* Adjust this to control the height */
+        position: relative;
+        height: 0;
+        margin-top: 20px; /* Add margin to create space below the heading */
+      }
+  
+      .iframe-container iframe {
+        width: 100%; /* Fit the iframe within the container */
+        height: 100%;
+        border: none; /* Removes default border */
+        zoom: 0.80; /* Adjust zoom to fit one page */
+      }
+  
+      @media (max-width: 768px) {
+        .iframe-container {
+          padding-bottom: 100%; /* Increased height for mobile devices */
+        }
+  
+        .iframe-container iframe {
+          zoom: 0.65; /* Adjust zoom to fit one page on smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="name-title">Larnell&nbsp<span class="umich-logo"></span>oore</div>
+      <a href="#" class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="navbar-links" id="navbar-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Research/Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+        </ul>
+      </div>
+    </nav>
+
+   
+    <div class="hero-container">
+      <!-- Profile Picture -->
+      <img src="img/me2.png" alt="Larnell Moore" class="profile-pic">
+  
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="intro">
+          <h1 class="display-2" id="typed-name">G</h1>
+          <h2>Passionate AI PhD CSE Student </h2>
+          <p>
+            I am a passionate, high-achieving PhD student in CSE at the University of Michigan. My advisor is Rada Mihalcea, and I work in the LIT lab.
+          </p>
+          <p> My primary research interests are Natural Language Processing, Deep Learning, and Machine Learning. I aspire to become a skilled applied AI/ML researcher to help democratize education and for societal good.
+        </p>
+        <p> 
+          I have lived in Michigan my entire life and have a love for full-stack development and hackathons. Currently, I am supported by the Rackham Merit Fellowship.
+        </p>
+        <p>
+            Feel free to contact me through LinkedIn or at larnell at umich dot edu! 
+           </p>
+
+           
+
+          <a href="https://github.com/LuffyAI" title="Github" class="icon-link">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anthony-m-8a0a04183/" title="LinkedIn" class="icon-link">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="mailto:larnell@umich.edu" title="Email" class="icon-link">
+            <i class="fas fa-envelope fa-2x"></i>
+          </a>
+  
+          <a href="https://scholar.google.com/citations?user=bDP9hvQAAAAJ&hl=en" title="Google Scholar" class="icon-link">
+            <i class="fas fa-graduation-cap fa-2x"></i>
+          </a>
+        </div>
+  
+        
+        <!-- Interests Section -->
+   
+  
+        <!-- Education Section -->
+        
+      </div>
+    </div>
+   
+    <hr>
+
+    <div class="cv-heading">
+      <h1>WORK EXPERIENCE</h1>
+    </div>
+
+
+    
+    <div class="experience-container">
+
+      <div class="experience-card">
+        <img src="img/Ann.png" alt="CSE">
+        <div class="card-header">Graduate Student Researcher</div>
+        <div class="card-body">
+          <p>Aug. 2024 - Present</p>
+          <p> LIT @ UMICH</p>
+          <ul>
+            <li>Designed a custom GPT-powered LLM agent prototype using LangChain, OpenAI API, and Chromadb.</li>
+            <li>Researched AI concepts, including fine-tuning models and generative feedback loops.</li>
+            <li>Developed a tool for creating fine-tuning datasets with a user-friendly interface.</li>
+            <li>Delivered an hour-long presentation on LLM agents.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- First Experience Card -->
+      <div class="experience-card">
+        <img src="img/CSAA_logo.png" alt="CSAA Logo">
+        <div class="card-header">Software Engineer Intern @ CSAA Insurance Group</div>
+        <div class="card-body">
+          <p>May 2023 - May 2024</p>
+          <ul>
+            <li>Developed a web application using Python, HTML, Flask, and CSS.</li>
+            <li>Presented a live demonstration in front of 40 CSAA employees.</li>
+            <li>Gained knowledge in software development lifecycle and Agile methodologies.</li>
+            <li>Learned about cloud computing and infrastructure as code.</li>
+            <li>Earned the most exciting pitch award at the 2023 Intern Innovation Jam.</li>
+            <li>Given a FTE SWE Return Offer</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Second Experience Card -->
+      <div class="experience-card">
+        <img src="img/Ann.png" alt="CSE">
+        <div class="card-header">Undergraduate Student Researcher</div>
+        <div class="card-body">
+          <p>Sept. 2023 - Mar. 2024</p>
+          <p>Pervasive Computing Lab @ UMDearborn</p>
+          <ul>
+            <li>Designed a custom GPT-powered LLM agent prototype using LangChain, OpenAI API, and Chromadb.</li>
+            <li>Researched AI concepts, including fine-tuning models and generative feedback loops.</li>
+            <li>Developed a tool for creating fine-tuning datasets with a user-friendly interface.</li>
+            <li>Delivered an hour-long presentation on LLM agents.</li>
+          </ul>
+        </div>
+      </div>
+
+
+    
+      <!-- Third Experience Card -->
+      <div class="experience-card">
+        <img src="img/Ann.png" alt="CSE">
+        <div class="card-header">TUTOR II (TEMP) CECS SI Leader @ University of Michigan-Dearborn</div>
+        <div class="card-body">
+          <p>Sept. 2021 - Sept. 2023</p>
+          <ul>
+            <li>Led bi-weekly study sessions for 30 CS students to build strong academic skills.</li>
+            <li>Created 30+ collaborative activities to teach complex CS concepts.</li>
+            <li>Delivered Zoom presentations during SI training, preparing new leaders.</li>
+            <li>Assisted in writing and updating SI website content.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+    <hr>
+    <!-- Curriculum Vitae Section -->
+    <div class="cv-heading">
+      <h1>Curriculum Vitae</h1>
+    </div>
+  
+    <!-- Embedding PDF Viewer inside a centered container -->
+    <div class="cv-container">
+      <div class="iframe-container">
+        <iframe src="https://drive.google.com/file/d/1rPE0T_9Sgd9AahdabRnq2dE5akb_5oLw/preview"></iframe>
+      </div>
+    </div>
+  </body>
+</html>

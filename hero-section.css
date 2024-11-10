@@ -1,0 +1,171 @@
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .profile-pic {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: scale-down;
+    margin-right: 30px;
+    margin-top: 60px; /* Add this line to lower the profile picture */
+    border: 5px solid #2F65A7; /* Add this line to set the border color */
+    box-shadow: #fff;
+  }
+  
+  .hero-content {
+    flex: 1;
+  }
+  
+  hr{
+    border:0;
+    margin:0;
+    width:100%;
+    height:2px;
+    background:#FFCB05;
+}
+
+  .intro {
+    margin-bottom: 20px;
+   
+  }
+  
+  .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2F65A7;
+    -webkit-text-stroke-color: #FFCB05;
+  }
+
+    
+  .intro h2 {
+    color: #FFCB05;
+  }
+  
+  .intro p {
+    font-size: 1.1rem;
+  }
+  
+  .interests, .education {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .icon-link {
+    margin: 10px 10px 0 0;
+    display: inline-block;
+    color: #FFCB05;
+  }
+  
+  .icon-link:hover {
+    color: #fff;
+  }
+
+  .cv-heading {
+    font-family: 'Hack', monospace;
+    font-size: 1.1rem;
+    color: #2F65A7;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    width: 100%; /* Ensure it spans the full container width */
+    margin-top: 20px; /* Optional: Add margin to separate it from other content */
+  }
+  
+  
+  /* Layout adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .hero-container {
+      text-align: center; /* Center-align text on mobile */
+      
+    }
+
+    .intro p {
+      text-align: left;
+      font-size: 1.03rem; /* Adjust paragraph font size for mobile */
+      line-height: 1.5; /* Improve readability */
+      margin: 15px 0; /* Consistent spacing between paragraphs */
+      word-wrap: break-word; /* Ensure long words don’t overflow */
+    }
+  
+    /* Hide the profile picture on smaller screens */
+    .profile-pic {
+      display: none;
+    }
+
+
+    
+  }
+  
+  /* Show picture only for screens wider than 768px */
+  @media (min-width: 769px) {
+    .profile-pic {
+      display: block;
+    }
+  }
+
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 65%; /* Standard height */
+    height: 0;
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Removes default border */
+  }
+
+  @media (max-width: 768px) {
+    .iframe-container {
+      padding-bottom: 100%; /* Increased height for mobile devices */
+    }
+  }
+
+/* Wrapper for the last character with a blinking cursor */
+.vim-caret {
+  display: inline-block;
+  position: relative; /* Allows positioning of the blinking cursor */
+  color: #2F65A7; /* Make the original '!' white to match the cursor color */
+  position: relative; /* Ensure it stays in normal document flow */
+  z-index: 1; /* Push it to the background */
+}
+
+/* Blinking cursor effect */
+.vim-caret::after {
+  content: '!'; /* Keeps the original '!' as part of the blinking cursor */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width of the '!' */
+  height: 100%; /* Cover the entire height */
+  background-color: #444d55; /* White to mimic terminal cursor */
+  animation: blink 1.6s steps(2, start) infinite;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+/* Blinking animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1; /* Visible for half the time */
+  }
+  50.01%, 100% {
+    opacity: 0; /* Invisible for the other half */
+  }
+}

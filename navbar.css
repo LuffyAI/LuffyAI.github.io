@@ -1,0 +1,132 @@
+ 
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00274C; /* University of Michigan blue */
+    color: white;
+    padding: 1rem;
+    border-bottom: 2px solid #FFCB05; /* Updated to maize border */
+    position: relative;
+    flex-direction: column;
+    z-index:100;
+  }
+  
+  /* Controls the title */
+  .name-title {
+    font-family: 'Hack', monospace;
+    font-size: 1.5rem;
+    margin: 0;
+    display: flex; /* Ensure the title and logo are on the same line */
+    align-items: center;
+  }
+
+
+  .name-title .umich-logo {
+    display: inline-block;
+    width: 2rem; /* Size of the logo */
+    height: 2rem; /* Size of the logo */
+    background-image: url('img/MUmich.png'); /* Replace with your logo's path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.2rem; /* Adjust spacing between the logo and the text */
+    vertical-align: middle; /* Align the logo vertically with the text */
+    position: relative;
+    top: 0.15rem; /* Adjust vertical alignment of the logo */
+  }
+  
+  /* Styling for the navigation links */
+  .navbar-links {
+    overflow: hidden; /* Hide overflowing content */
+    transition: max-height 0.3s ease-out; /* Smooth transition */
+  }
+  
+  .navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the links to the right */
+    gap: 2rem; /* Adds space between the items */
+    font-family: 'Hack', monospace;
+  }
+  
+  .navbar-links li {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-links li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    line-height: 1.2; /* Adjusts line height to control hover background */
+  }
+  
+  .navbar-links li:hover, .navbar-links li a:hover {
+    background-color: #FFCB05; /* Combine hover styles */
+    border-radius: 4px; /* Optionally adds a slight curve to the hover effect */
+  }
+  
+  /* Hamburger menu styling */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer; /* Make the hamburger clickable */
+    margin-left: auto; /* Aligns hamburger to the right */
+  }
+  
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  /* Media queries to manage the visibility of the hamburger menu */
+  @media (max-width: 768px) {
+    .navbar{
+        flex-direction: row;
+    }
+   
+    .navbar-links {
+      max-height: 0; /* Hide navbar links on small screens */
+      position: absolute; /* Ensure navbar links appear below the title */
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #00274C; /* Match navbar background */
+      flex-direction: row;
+    }
+  
+    .navbar-links.active {
+      max-height: 500px; /* Adjust depending on the number of links */
+      border-left: #FFCB05;
+      border-right: #FFCB05;
+      border-bottom: 2px solid #FFCB05; /* Updated to maize border */
+    }
+  
+    .navbar-links ul {
+      flex-direction: column; /* Stack links vertically on small screens */
+    }
+  
+    .navbar-links li {
+      text-align: center; /* Center-align navbar links */
+    }
+  
+    .navbar-links li a {
+      padding: 0.5rem 1rem; /* Add padding to navbar links */
+    }
+  
+    .hamburger {
+      display: flex; /* Show hamburger menu on small screens */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .navbar-links {
+      max-height: none; /* Ensure links are fully visible */
+    }
+  }

@@ -1,0 +1,165 @@
+/* General styling for the experience section */
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .experience-card {
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .experience-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+  /* Circular and centered image */
+  .experience-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image scales properly */
+    margin-bottom: 10px; /* Add some space below the image */
+  }
+  
+  .experience-card .card-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: center; /* Center the header text */
+  }
+
+  .card-header{
+    color: #FFCB05;
+  }
+  
+  .experience-card .card-body {
+    padding: 0 20px 10px;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    text-align: center; /* Center the body text */
+  }
+  
+  .experience-card ul {
+    padding: 0 20px 20px;
+    list-style-type: none;
+    text-align: left; /* Align the list items to the left */
+  }
+  
+  .experience-card li {
+    margin-bottom: 10px;
+  }
+
+  .experience-card p {
+    color: #ffffff; /* Maize yellow color */
+    margin-left: 2px; /* Space between bullet point and text */
+  }
+
+  .experience-card ul li {
+    color: #FFCB05; /* Maize yellow color */
+    list-style-type: disc; /* Default bullet point style */
+    margin-left: 20px; /* Space between bullet point and text */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .experience-card {
+      width: 100%;
+      max-width: 100%; /* Allow cards to take the full width of the container */
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .experience-card .card-header {
+      font-size: 1.1rem; /* Slightly smaller header font for mobile */
+    }
+  
+    .experience-card .card-body {
+      font-size: 0.8rem; /* Adjust font size for better readability */
+    }
+  
+    .experience-card ul {
+      padding: 0 10px 10px; /* Reduce padding to fit smaller screens */
+    }
+  }
+  
+  /* Two cards per row on desktop screens */
+@media (min-width: 769px) {
+  .experience-card {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row with space between */
+  }
+}
+
+/* Modal styling */
+.expmodal {
+  font-family: 'Hack', monospace;
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.2);
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+}
+
+.expmodal-content {
+  background-color: #1e1e1e;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px; /* Control max width */
+  max-height: 80vh; /* Control max height to avoid overflow */
+  overflow-y: auto; /* Add scrolling if content exceeds max height */
+  border-radius: 8px;
+  color: #fff;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.expmodal-header h2 {
+  color: #FFCB05; /* Maize yellow */
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #FFCB05;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive modal adjustments */
+@media (max-width: 768px) {
+  .expmodal-content {
+      width: 90%;
+  }
+}
+
+.expmodal-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Circular image */
+  margin: 10px auto;
+  display: block; /* Center image */
+  object-fit: cover; /* Scale down while maintaining aspect ratio */
+}
