@@ -69,39 +69,70 @@ function updateCarouselButtons() {
     document.querySelector('.carousel-button.left').disabled = currentSlide === 0;
     document.querySelector('.carousel-button.right').disabled = currentSlide === totalSlides - 1;
 }
-
-// Function to open the modal and display project details
+// Function to open the modal and display project details, including media
 function openModal(projectId) {
     const project = projectData.find(p => p.id === projectId);
 
     if (project) {
-        // Populate Banner Info
         document.getElementById('modalBannerImage').src = project.image;
         document.getElementById('modalBannerTitle').textContent = project.title;
+        document.getElementById('modalBannerTitle').href = project.link;
         document.getElementById('modalStartDate').textContent = project.creationDate;
         document.getElementById('modalEndDate').textContent = project.endDate;
         document.getElementById('modalProjectType').textContent = project.type;
-
-        // Populate New Sections
-        document.getElementById('modalAuthors').textContent = project.authors || "Author not available";
+        document.getElementById('modalAuthors').textContent = project.authors ? project.authors.join(", ") : "Author not available";
         document.getElementById('modalAbstract').textContent = project.abstract || "Abstract not available";
+        document.getElementById('modalDescription').textContent = project.description || "Description not available";
 
-        // Optional Media Section
+        // Clear previous media content
         const mediaSection = document.getElementById('modalMediaSection');
-        const mediaElement = document.getElementById('modalMedia');
-        if (project.media) {
-            mediaElement.src = project.media;
+        mediaSection.innerHTML = ''; // Clear existing media content
+
+        if (project.media && project.media.length > 0) {
+            project.media.forEach(media => {
+                let mediaElement;
+
+                if (media.mediaType === 'video') {
+                    mediaElement = document.createElement('iframe');
+                    mediaElement.width = "560";
+                    mediaElement.height = "315";
+                    
+                    // Handle YouTube embed formatting
+                    let videoUrl = media.mediaSrc;
+                    if (videoUrl.includes('youtube.com/watch')) {
+                        const videoId = videoUrl.split('v=')[1];
+                        videoUrl = `https://www.youtube.com/embed/${videoId}`;
+                    }
+                    
+                    mediaElement.src = videoUrl;
+                    mediaElement.frameBorder = "0";
+                    mediaElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                    mediaElement.allowFullscreen = true;
+                } else if (media.mediaType === 'document' || media.mediaType === 'image') {
+                    mediaElement = document.createElement(media.mediaType === 'image' ? 'img' : 'iframe');
+                    mediaElement.src = media.mediaSrc;
+                    mediaElement.style.maxWidth = "100%";
+                    mediaElement.style.maxHeight = "300px";
+                    if (media.mediaType === 'document') {
+                        mediaElement.style.width = "100%";
+                        mediaElement.style.height = "400px";
+                        mediaElement.style.border = "none";
+                    }
+                }
+
+                if (mediaElement) {
+                    mediaSection.appendChild(mediaElement);
+                }
+            });
+
             mediaSection.style.display = 'block';
         } else {
             mediaSection.style.display = 'none';
         }
 
-        // Project Details
-        document.getElementById('modalDescription').textContent = project.description || "Description not available";
-
-        // Skills
+        // Display skills list
         const skillsList = document.getElementById('modalSkillsList');
-        skillsList.innerHTML = ''; // Clear previous skills
+        skillsList.innerHTML = '';
         if (project.skills && project.skills.length > 0) {
             project.skills.forEach(skill => {
                 const skillItem = document.createElement('li');
@@ -112,10 +143,10 @@ function openModal(projectId) {
             skillsList.innerHTML = '<li>No skills listed</li>';
         }
 
-        // Display the modal
         document.getElementById('modal').style.display = 'flex';
     }
 }
+
 
 // Function to close the modal
 function closeModal() {
