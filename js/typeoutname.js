@@ -22,4 +22,4 @@ function typeWriter(elementId, text, speed) {
   }
   
   // Trigger the animation
-  typeWriter('typed-name', 'GO BLUE! GO MICHIGAN', 200); // Adjust the speed as necessary
+  typeWriter('typed-name', 'GO BLUE', 200); // Adjust the speed as necessary
