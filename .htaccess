@@ -1,10 +1,14 @@
-# mod_rewrite starts here
+# Set 'home' as the default entry point for the root directory
 RewriteEngine on
 
-# Rewrite 'home' to 'index.html' (or 'index.php')
+# Redirect root URL (/) to /home
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+\sHTTP [NC]
+RewriteRule ^$ /home [R=301,L]
+
+# Rewrite 'home' to serve 'index.html'
 RewriteRule ^home/?$ index.html [L]
 
-# Existing rewrite rule to serve .html files without the .html extension
+# Rewrite rules for serving .html files without extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
