@@ -1,0 +1,108 @@
+
+footer{
+    background-color: #00274c;
+}
+.footerContainer{
+    width: 100%;
+    padding: 10px 10px 10px ;
+}
+
+.CSEIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment with the icons */
+    margin-bottom: 1px; /* Adds spacing between the logo and social icons */
+}
+
+.CSEIcon img {
+    width: 30%; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    margin-left: 50px;
+    margin-bottom: 0;
+}
+
+
+
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+    margin-top: 0
+}
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Hover affect on social media icon */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 20px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p{
+    color: white;
+}
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+
+    
+.CSEIcon img {
+    width: 90%; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent distortion */
+    margin-left: 55px;
+}
+}
